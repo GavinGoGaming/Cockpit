@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cockpit",
+  "version": "${version}",
+  "name": "Cockpit",
+  "description": "Turn your wings into a 737.",
+  "authors": ["GavinGoGaming"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cockpit/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.klash.cockpit.client.CockpitDataGenerator"
+    ],
+    "client": [
+      "dev.klash.cockpit.client.CockpitClient"
+    ],
+    "main": [
+      "dev.klash.cockpit.Cockpit"
+    ],
+    "modmenu": [
+      "dev.klash.cockpit.client.CockpitConfig"
+    ]
+  },
+  "mixins": [
+    "cockpit.mixins.json",
+    {
+      "config": "cockpit.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
